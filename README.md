@@ -25,8 +25,6 @@ cd skillsmap-infra-10
  
 
 # TODO
-- [ ] Create Internet Gateway
-- [ ] Create NAT gateway
 - [ ] Create Security Groups
 - [ ] Create Route Tables
 - [ ] Create Launch Configuration
@@ -39,3 +37,5 @@ cd skillsmap-infra-10
 # DONE
 - [x] Create VPC
 - [x] Create Subnets
+- [x] Create Internet Gateway
+- [x] Create NAT gateway
