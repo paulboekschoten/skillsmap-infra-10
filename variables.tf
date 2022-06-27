@@ -51,3 +51,15 @@ variable "https_port" {
   type        = number
   default     = 443
 }
+
+# main domain for fqdn
+variable "route53_zone" {
+  description = "the domain to use for the url"
+  type        = string
+}
+
+# subdomain for fqdn
+variable "route53_subdomain" {
+  description = "the subdomain of the url"
+  type        = string
+}
