@@ -63,3 +63,9 @@ variable "route53_subdomain" {
   description = "the subdomain of the url"
   type        = string
 }
+
+# email for validating lets encrypt certificate
+variable "cert_email" {
+  description = "email address used to obtain ssl certificate"
+  type        = string
+}
