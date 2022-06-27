@@ -27,7 +27,6 @@ cd skillsmap-infra-10
 # TODO
 - [ ] Create Launch Configuration
 - [ ] Create Autoscaling Group
-- [ ] Create Target Group
 - [ ] Create Load Balancer
 - [ ] Create HTTPS Certificate
 - [ ] Create Listener
@@ -40,3 +39,4 @@ cd skillsmap-infra-10
 - [x] Create Security Groups
 - [x] Create Route Tables
 - [x] Create Security Group Rules
+- [x] Create Target Group
