@@ -25,7 +25,6 @@ cd skillsmap-infra-10
  
 
 # TODO
-- [ ] Create VPC
 - [ ] Create Subnets
 - [ ] Create Internet Gateway
 - [ ] Create NAT gateway
@@ -39,3 +38,4 @@ cd skillsmap-infra-10
 - [ ] Create Listener
 
 # DONE
+- [x] Create VPC
