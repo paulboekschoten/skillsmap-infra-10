@@ -25,7 +25,6 @@ cd skillsmap-infra-10
  
 
 # TODO
-- [ ] Create Launch Configuration
 - [ ] Create Autoscaling Group
 - [ ] Destroy/apply
 
@@ -43,3 +42,4 @@ cd skillsmap-infra-10
 - [x] Route 53 entry
 - [x] Create HTTPS Certificate
 - [x] Create Listener
+- [x] Create Launch Configuration
