@@ -18,3 +18,21 @@ resource "aws_launch_configuration" "webapp" {
     create_before_destroy = true
   }
 }
+
+# auto scaling group
+resource "aws_autoscaling_group" "webapp" {
+  launch_configuration = aws_launch_configuration.webapp.name
+  vpc_zone_identifier  = [aws_subnet.private.id]
+
+  target_group_arns = [aws_lb_target_group.web.arn]
+  health_check_type = "ELB"
+
+  min_size = 1
+  max_size = 2
+
+  tag {
+    key                 = "Name"
+    value               = var.name_tag
+    propagate_at_launch = true
+  }
+}

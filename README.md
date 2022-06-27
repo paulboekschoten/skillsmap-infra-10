@@ -21,13 +21,9 @@ Change directory
 ```
 cd skillsmap-infra-10
 ```
- 
- 
 
 # TODO
-- [ ] Create Autoscaling Group
 - [ ] Destroy/apply
-
 
 # DONE
 - [x] Create VPC
@@ -43,3 +39,4 @@ cd skillsmap-infra-10
 - [x] Create HTTPS Certificate
 - [x] Create Listener
 - [x] Create Launch Configuration
+- [x] Create Autoscaling Group
