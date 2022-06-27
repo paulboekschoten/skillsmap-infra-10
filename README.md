@@ -27,9 +27,8 @@ cd skillsmap-infra-10
 # TODO
 - [ ] Create Launch Configuration
 - [ ] Create Autoscaling Group
-- [ ] Create Load Balancer
-- [ ] Create HTTPS Certificate
-- [ ] Create Listener
+- [ ] Destroy/apply
+
 
 # DONE
 - [x] Create VPC
@@ -40,3 +39,7 @@ cd skillsmap-infra-10
 - [x] Create Route Tables
 - [x] Create Security Group Rules
 - [x] Create Target Group
+- [x] Create Load Balancer
+- [x] Route 53 entry
+- [x] Create HTTPS Certificate
+- [x] Create Listener

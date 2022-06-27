@@ -5,3 +5,48 @@ resource "aws_lb_target_group" "web" {
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
 }
+
+# load balancer
+resource "aws_lb" "app" {
+  name               = var.name_tag
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.public.id]
+  subnets            = [aws_subnet.public1.id, aws_subnet.public2.id]
+
+  tags = {
+    Environment = var.name_tag
+  }
+}
+
+resource "aws_lb_listener" "https" {
+  load_balancer_arn = aws_lb.app.arn
+  port              = var.https_port
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+  certificate_arn   = aws_acm_certificate.cert.arn
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.web.arn
+  }
+}
+
+## route53 fqdn
+# fetch zone
+data "aws_route53_zone" "selected" {
+  name         = var.route53_zone
+  private_zone = false
+}
+# create record
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.selected.zone_id
+  name    = "${var.route53_subdomain}.${var.route53_zone}"
+  type    = "A"
+
+  alias {
+    name                   = aws_lb.app.dns_name
+    zone_id                = aws_lb.app.zone_id
+    evaluate_target_health = true
+  }
+}

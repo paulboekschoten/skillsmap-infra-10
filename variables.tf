@@ -51,3 +51,21 @@ variable "https_port" {
   type        = number
   default     = 443
 }
+
+# main domain for fqdn
+variable "route53_zone" {
+  description = "the domain to use for the url"
+  type        = string
+}
+
+# subdomain for fqdn
+variable "route53_subdomain" {
+  description = "the subdomain of the url"
+  type        = string
+}
+
+# email for validating lets encrypt certificate
+variable "cert_email" {
+  description = "email address used to obtain ssl certificate"
+  type        = string
+}
