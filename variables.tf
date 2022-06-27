@@ -69,3 +69,17 @@ variable "cert_email" {
   description = "email address used to obtain ssl certificate"
   type        = string
 }
+
+# ami id of the image to use for the instance
+variable "ami" {
+  description = "AMI id of the image"
+  type        = string
+  default     = "ami-0042da0ea9ad6dd83"
+}
+
+# instance type
+variable "instance_type" {
+  description = "instance type"
+  type        = string
+  default     = "t2.micro"
+}
