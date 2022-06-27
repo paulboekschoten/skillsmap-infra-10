@@ -37,3 +37,17 @@ variable "subnet_public2" {
   type        = string
   default     = "10.1.2.0/24"
 }
+
+# default http port
+variable "http_port" {
+  description = "http port"
+  type        = number
+  default     = 80
+}
+
+# default https port
+variable "https_port" {
+  description = "https port"
+  type        = number
+  default     = 443
+}
